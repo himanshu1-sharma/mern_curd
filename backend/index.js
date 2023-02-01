@@ -2,12 +2,14 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors")
 const app = express();
-const bodyParser = require("body-parser")
+const bodyparser = require('body-parser');
+var router = express()
 require("dotenv").config();
 const { DB_CONNECT, PORT } = process.env;
 const userRouter = require("./routes/user.routes")
 
 app.use(express.json())
+
 
 //db connect
 mongoose.connect(DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -19,7 +21,7 @@ db.on("error", (err) => console.log(err));
 
 
 //routes
-
+router.use(bodyparser.json())
 app.use("/api/user", userRouter)
 
 

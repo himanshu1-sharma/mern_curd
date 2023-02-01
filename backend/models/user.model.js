@@ -20,10 +20,6 @@ const userSchema = new Schema({
     created_ts: {
         type: Date,
         default: Date.now
-    },
-    update_ts: {
-        type: Date,
-        default: null
     }
 })
 
