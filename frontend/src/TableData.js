@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-
+import React, { useState, useEffect } from "react"
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
 import Check from '@material-ui/icons/Check';
@@ -16,6 +16,7 @@ import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
 import MaterialTable from "material-table";
+import Axios from 'axios'
 
 const tableIcons = {
     Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -40,15 +41,20 @@ const tableIcons = {
 
 
 const Table = () => {
+    const [data, setData] = useState([])
     const columns = [
         { title: "ID", field: "id" },
         { title: "NAME", field: "name" },
-
+        { title: "EMAIL", field: "email" },
+        { title: "Phone Number", field: "phoneno" },
+        { title: "ACTION", field: "action", align: "right" }
     ]
+
 
     return (
         <>
             <MaterialTable
+                title="Users"
                 icons={tableIcons}
                 columns={columns}
             />

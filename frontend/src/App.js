@@ -7,6 +7,7 @@ import Axios from 'axios'
 import { BASEURL } from './Constent'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import TableData from './TableData'
 
 
 function App() {
@@ -75,6 +76,9 @@ function App() {
             Submit
           </Button>
         </Form>
+      </div>
+      <div className='container mt-5'>
+        <TableData />
       </div>
     </>
   )
