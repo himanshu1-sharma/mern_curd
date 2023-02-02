@@ -9,6 +9,7 @@ const { DB_CONNECT, PORT } = process.env;
 const userRouter = require("./routes/user.routes")
 
 app.use(express.json())
+app.use(cors());
 
 
 //db connect

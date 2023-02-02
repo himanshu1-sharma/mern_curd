@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { findById } = require("../models/user.model");
 const User = require("../models/user.model")
 
 exports.userSignup = async (req, res) => {
