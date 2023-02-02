@@ -7,6 +7,8 @@ var router = express()
 require("dotenv").config();
 const { DB_CONNECT, PORT } = process.env;
 const userRouter = require("./routes/user.routes")
+const issueRouter = require("./routes/reportUserIssue.route")
+const reportRouter = require("./routes/report.routes")
 
 app.use(express.json())
 app.use(cors());
@@ -24,6 +26,8 @@ db.on("error", (err) => console.log(err));
 //routes
 router.use(bodyparser.json())
 app.use("/api/user", userRouter)
+app.use("/api/issue", issueRouter)
+app.use("/api/report", reportRouter)
 
 
 app.listen(PORT, () => {
