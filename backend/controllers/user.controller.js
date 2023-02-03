@@ -48,7 +48,7 @@ exports.getUser = async (req, res) => {
 
 exports.deleteUser = async (req, res) => {
     try {
-        let { id } = req.body
+        let { id } = req.params
         let user = await User.findById(id)
         if (!user) return res.status(200).json({
             errorcode: 1,
@@ -76,7 +76,7 @@ exports.deleteUser = async (req, res) => {
 exports.updateUser = async (req, res) => {
     try {
         let { id, name, email, phoneno } = req.body
-        if (!id || !name || !email || !phoneno) return res.status(200).json({
+        if (!id) return res.status(200).json({
             errorcode: 1,
             status: false,
             message: "user id should be present",

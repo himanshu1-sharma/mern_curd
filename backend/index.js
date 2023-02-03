@@ -7,7 +7,7 @@ var router = express()
 require("dotenv").config();
 const { DB_CONNECT, PORT } = process.env;
 const userRouter = require("./routes/user.routes")
-const issueRouter = require("./routes/reportUserIssue.route")
+const issueRouter = require("./routes/reportUserIssue.routes")
 const reportRouter = require("./routes/report.routes")
 
 app.use(express.json())

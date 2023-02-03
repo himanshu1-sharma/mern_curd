@@ -39,7 +39,7 @@ function App() {
           setInput({})
         }
         else {
-          toast.error('🦄 Wow so easy!', {
+          toast.error(`${data.data.message}`, {
             position: "bottom-center",
             autoClose: 5000,
             hideProgressBar: false,
